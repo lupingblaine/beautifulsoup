@@ -104,10 +104,6 @@ cd ..
 until go to the beautifulsoup 
 
 ```bash
-cd ..
-```
-
-```bash
 pytest bs4/test/test_soupreplacer.py -v
 ```
 The result I got:
