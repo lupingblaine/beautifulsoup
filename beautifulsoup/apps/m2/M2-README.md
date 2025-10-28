@@ -38,9 +38,11 @@ python task4.py ~(path)/test_case.html
 ## Part3 
 Changed：
 # __init__.py in bs4:
-1.
+1. 
+```bash
 from .soupreplacer import SoupReplacer
-2.
+```
+```bash
 def __init__(
     self,
     markup: _IncomingMarkup = "",
@@ -53,22 +55,25 @@ def __init__(
     element_classes: Optional[Dict[Type[PageElement], Type[PageElement]]] = None,
     **kwargs: Any,
 ):
-3.
+```
+```bash
 self.replacer = replacer
+```
 
 
  # _htmlparser.py in bs4/builder:
-
+```bash
 def handle_starttag(self, name, attrs):
     if self.soup and getattr(self.soup, "replacer", None):
         name = self.soup.replacer.replace(name)
     super().handle_starttag(name, attrs)
-
+```
+```bash
 def handle_endtag(self, name):
     if self.soup and getattr(self.soup, "replacer", None):
         name = self.soup.replacer.replace(name)
     super().handle_endtag(name)
-
+```
 
 Create:
 soupreplacer.py
