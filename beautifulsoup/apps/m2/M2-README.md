@@ -16,9 +16,9 @@ cd m2
 ```
 Run test
 ```bash
-python task2.py ~(path)/test_case.html
-python task3.py ~(path)/test_case.html
-python task4.py ~(path)/test_case.html
+python task2.py test_case.html
+python task3.py test_case.html
+python task4.py test_case.html
 ```
 
 ## Part2 BeautifulSoup API Function Locations 
@@ -36,6 +36,16 @@ python task4.py ~(path)/test_case.html
 
 
 ## Part3 
+
+# 1️⃣ 到真正的项目根目录（里面有 pyproject.toml 那一层）
+cd "/Users/luping/computer science/UCI/262P/project/beautifulsoup-milestone4/beautifulsoup"
+
+# 2️⃣ 把本地这份 beautifulsoup 安装成可编辑包
+pip install -e .
+
+# 3️⃣ 从项目根目录运行你的 M2 task6
+python apps/m2/task6.py apps/m2/test_case.html
+
 Changed：
 # __init__.py in bs4:
 1. 
@@ -49,7 +59,7 @@ def __init__(
     features: Optional[Union[str, Sequence[str]]] = None,
     builder: Optional[Union[TreeBuilder, Type[TreeBuilder]]] = None,
     parse_only: Optional[SoupStrainer] = None,
-    replacer: Optional[SoupReplacer] = None,   # ✅ add
+    replacer: Optional[SoupReplacer] = None,   #  ！ add
     from_encoding: Optional[_Encoding] = None,
     exclude_encodings: Optional[_Encodings] = None,
     element_classes: Optional[Dict[Type[PageElement], Type[PageElement]]] = None,
@@ -104,7 +114,7 @@ cd ..
 until go to the beautifulsoup 
 
 ```bash
-pytest bs4/test/test_soupreplacer.py -v
+pytest bs4/tests/test_soupreplacer.py -v
 ```
 The result I got:
 env) luping@lupingdeAir beautifulsoup % pytest bs4/test/test_soupreplacer.py -v
